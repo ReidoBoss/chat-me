@@ -19,5 +19,5 @@ libraryDependencies ++= Seq(
   "org.apache.pekko" %% "pekko-stream"                % "1.0.3",
   "org.apache.pekko" %% "pekko-slf4j"                 % "1.0.3",
   "org.apache.pekko" %% "pekko-serialization-jackson" % "1.0.3",
-  "org.mindrot.bcrypt" % "bcrypt" % "0.3"
+  "org.mindrot.bcrypt" % "bcrypt" % "0.4"
 )
