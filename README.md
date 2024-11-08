@@ -50,8 +50,8 @@ ChatMe is a real-time social media and messaging application built with Play Fra
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/yourusername/ChatMe.git
-   cd ChatMe
+   git clone https://github.com/ReidoBoss/Chat-Me.git
+   cd Chat-Me
    ```
 
 2. Install backend dependencies:
@@ -78,7 +78,7 @@ ChatMe is a real-time social media and messaging application built with Play Fra
    cd client
    npm run dev
    ```
-   The frontend will be accessible at `http://localhost:3000`.
+   The frontend will be accessible at `http://localhost:5173`.
 
 3. **Environment Variables**: Set up environment variables as required in the `.env` file for both the backend and frontend configurations (such as database connection strings and API endpoints).
 
