@@ -5,6 +5,7 @@ import play.api.db.slick.DatabaseConfigProvider
 import slick.jdbc.PostgresProfile
 import domain.user.User
 import java.util.UUID
+import scala.concurrent.Future
 
 @Singleton
 class UserRepository @Inject() (val dcp:DatabaseConfigProvider) {
@@ -26,5 +27,19 @@ class UserRepository @Inject() (val dcp:DatabaseConfigProvider) {
 
   val users = TableQuery[UserTable]
 
+  def getByUsername (username:String):Future[Option[User]] = {
+    val action = users.filter(_.username === username).result.headOption
+    db.run(action)
+  }
+
+  def getByEmail (email:String):Future[Option[User]] = {
+    val action = users.filter(_.email === email).result.headOption
+    db.run(action)
+  }
+
+  def add ( user:User ):Future[Int] = {
+    val action = users += user.withHashedPassword
+    db.run(action)
+  }
 
 }
