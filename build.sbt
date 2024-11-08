@@ -12,6 +12,7 @@ libraryDependencies ++= Seq(
   guice,
   "org.scalatestplus.play" %% "scalatestplus-play" % "7.0.1" % Test,
   "org.playframework" %% "play-slick" % "6.1.1",
-  "org.playframework" %% "play-slick-evolutions" % "6.1.1"
+  "org.playframework" %% "play-slick-evolutions" % "6.1.1",
+  "org.postgresql" % "postgresql" % "42.7.4"
 )
 
