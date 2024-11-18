@@ -1,114 +1,76 @@
-# ChatMe
+**Nuxt** and **Play Framework**:
 
-ChatMe is a real-time social media and messaging application built with Play Framework on the backend and Vue.js with Composition API and TypeScript on the frontend. Designed for seamless, instant communication, ChatMe enables users to connect, share, and chat in real-time with friends, alongside a growing set of social media features.
+### Adjustments for Nuxt
 
-> **Note:** ChatMe is currently under development. This README will be updated as the app evolves.
+1. **Update Tech Stack**:
+   - Replace `Vue.js with Composition API` with `Nuxt 3 with Composition API`.
+   - Mention server-side rendering (SSR) or static site generation (SSG) if applicable.
 
-## Table of Contents
-
-- [Features](#features)
-- [Tech Stack](#tech-stack)
-- [Installation](#installation)
-- [Development Setup](#development-setup)
-- [Usage](#usage)
-- [Contributing](#contributing)
-- [Roadmap](#roadmap)
-- [License](#license)
-
----
-
-## Features
-
-### Priority 0: MVP Features (In Development)
-- **User Registration and Login**: Register with a username, password, full name, and email; log in to access your account.
-- **Password Recovery**: Reset password via email and a one-time password (OTP).
-- **Basic Profile**: Upload profile pictures, view friends' profiles, and add or accept friend requests.
-- **Real-Time Chat**: Chat with friends in real-time and see their online/offline status.
-- **Basic Posting**: Post text and images, view friends’ posts.
-
-### Priority 1: Upcoming Features
-- **Enhanced Chat Experience**: Typing indicators for active conversations.
-- **Social Interaction**: Like, react to, and comment on friends’ posts.
-- **Notifications**: Real-time notifications for new messages, likes, comments, and friend requests.
-- **Privacy and Blocking**: Control visibility of your profile and block unwanted users.
-
-### Priority 2: Future Enhancements
-- **Extended Profile Customization**: Update profile and cover photos.
-- **Search and Mutual Friends**: Search users by name and view mutual friends on profiles.
-- **Advanced Notifications**: Mute notifications for specific friends or groups.
-
----
-
-## Tech Stack
-
-- **Backend**: Play Framework, PostgreSQL
-- **Frontend**: Vue.js with Composition API, TypeScript, Pinia (for state management)
-- **Testing**: Vitest
-- **Other**: WebSockets for real-time messaging
-
-## Installation
-
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/ReidoBoss/Chat-Me.git
-   cd Chat-Me
+   ```markdown
+   - **Frontend**: Nuxt 3 with Composition API, TypeScript, Pinia
    ```
 
-2. Install backend dependencies:
-   ```bash
-   sbt compile
-   ```
-
-3. Install frontend dependencies:
+2. **Installation Section**:
+   Update the frontend setup instructions to reflect Nuxt's commands:
    ```bash
    cd client
    npm install
-   ```
-
-## Development Setup
-
-1. **Start the backend server**:
-   ```bash
-   sbt run
-   ```
-   This will start the Play Framework server at `http://localhost:9000`.
-
-2. **Start the frontend development server**:
-   ```bash
-   cd client
    npm run dev
    ```
-   The frontend will be accessible at `http://localhost:5173`.
 
-3. **Environment Variables**: Set up environment variables as required in the `.env` file for both the backend and frontend configurations (such as database connection strings and API endpoints).
+3. **Environment Variables**:
+   Explicitly mention `.env` handling for Nuxt, such as `NUXT_PUBLIC_` prefixes for client-side access.
 
-## Usage
+4. **Routing**:
+   If leveraging Nuxt’s file-based routing, consider highlighting the ease of routing management.
 
-1. Register with a new account and log in.
-2. Add friends, initiate real-time chat, and start posting updates.
-3. Access the profile settings to customize your profile picture and personal details.
-4. Monitor updates and notifications as features are rolled out in real-time.
+5. **Features Section**:
+   Mention SSR/SSG benefits, such as faster page loads and SEO improvements, as a selling point.
 
-> **Note**: Features are being added progressively. See the [Roadmap](#roadmap) for current development priorities.
+### Suggested Additional Sections
 
-## Contributing
+#### Deployment
+Since you're transitioning to Nuxt, include deployment instructions for common platforms like Vercel, Netlify, or self-hosted options alongside Play Framework.
 
-I welcome contributions! To contribute:
+```markdown
+## Deployment
 
-1. Fork the repository and create a new branch for your feature or bug fix.
-2. Make your changes and ensure that tests are passing.
-3. Submit a pull request with a clear description of your changes.
+### Backend (Play Framework)
+1. Build the project:
+   ```bash
+   sbt dist
+   ```
+2. Deploy the generated `.zip` file on your preferred server.
 
-For more details, see [CONTRIBUTING.md](CONTRIBUTING.md) (to be created).
+### Frontend (Nuxt)
+1. Build the Nuxt app:
+   ```bash
+   npm run build
+   ```
+2. Deploy the `dist/` directory to Vercel, Netlify, or your hosting platform of choice.
+```
 
-## Roadmap
+#### API Integration
+Since Play Framework is the backend:
+```markdown
+## API Integration
+- The backend exposes a RESTful API for authentication, messaging, and user management.
+- Base URL: `http://localhost:9000/api/v1/`
 
-- **Phase 1**: Core MVP features - User registration, login, basic profile setup, friend management, and real-time chat.
-- **Phase 2**: Social interaction and notifications - Posting, likes, comments, typing indicators, and notifications.
-- **Phase 3**: Advanced features - Profile customization, search functionality, privacy settings, and blocking users.
+### Example Endpoints
+- **User Login**: `POST /auth/login`
+- **Fetch Friends**: `GET /friends`
+- **Send Message**: `POST /messages`
+```
 
-> For a complete list of planned features, refer to the [Features](#features) section above.
+### Checklist for Migration
 
+- **Frontend**:
+  - Set up Nuxt 3 with TypeScript.
+  - Migrate Vue routes to Nuxt's file-based routing.
+  - Convert your Pinia stores if necessary.
+  - Ensure WebSocket integration works seamlessly.
 
-**Note**: As ChatMe is in active development, the roadmap and features list will be updated frequently. Stay tuned for new releases and updates!
-
+- **Backend**:
+  - Review API design to ensure compatibility with Nuxt's requirements.
+  - Update CORS policies to handle SSR-specific requests.
