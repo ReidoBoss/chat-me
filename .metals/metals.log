@@ -432,3 +432,6 @@ Caused by: java.nio.file.NoSuchFileException: /Users/stsagarino/Library/Caches/C
 2024.11.23 18:18:02 WARN  Scala instance jar /Users/stsagarino/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/com/vladsch/flexmark/flexmark-ext-superscript/0.62.2/flexmark-ext-superscript-0.62.2.jar doesn't exist!
 2024.11.23 18:19:10 WARN  no build target for: /Users/stephensagarino/Desktop/chat-me/build.sbt
 2024.11.23 18:19:10 WARN  no build target for: /Users/stephensagarino/Desktop/chat-me/build.sc
+2024.11.23 18:26:43 INFO  Shutting down server
+2024.11.23 18:26:43 INFO  shutting down Metals
+2024.11.23 18:26:43 INFO  Exiting server
